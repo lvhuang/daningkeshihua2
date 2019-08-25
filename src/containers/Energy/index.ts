@@ -5,6 +5,7 @@ import Hello from "@/charts/Hello";
 import BasicColumnChart from "@/charts/BasicColumnChart";
 import LineChart from "@/charts/Line";
 import LiquidChart from "@/charts/Liquid";
+import MirrorChart from "@/charts/Mirror/index";
 import { sources, source$, emitData } from "./service";
 
 @Component({
@@ -13,14 +14,16 @@ import { sources, source$, emitData } from "./service";
     Hello,
     BasicColumnChart,
     LiquidChart,
-    LineChart
+    LineChart,
+    MirrorChart
   }
 })
 export default class Energy extends Vue {
   data = {
     hello: 0,
     line: [],
-    liquid: []
+    liquid: [],
+    mirror: []
   };
 
   mounted(): void {
@@ -31,7 +34,7 @@ export default class Energy extends Vue {
       };
       /** 调用数据源开始 */
       if (expectType("hello")) {
-        console.log(payload);
+        // console.log(payload);
         this.data.hello = payload;
       }
       /** 调用数据源结束 */
@@ -45,10 +48,17 @@ export default class Energy extends Vue {
 
       /** liqiud开始 */
       if (expectType("liquid")) {
-        console.log(payload);
+        // console.log(payload);
         this.data.liquid = payload;
       }
       /** liqiud结束 */
+
+      /** mirror开始 */
+      if (expectType("mirror")) {
+        // console.log(payload);
+        this.data.mirror = payload;
+      }
+      /** mirror结束 */
     });
   }
 

@@ -1,27 +1,37 @@
-import { Vue, Component, Prop } from "vue-property-decorator";
+import { Vue, Component, Prop, Watch } from "vue-property-decorator";
 import G2 from "@antv/g2";
+import { watch } from "fs";
 
 @Component
 export default class LiquidChart extends Vue {
   @Prop({ default: [] })
   readonly data!: any[];
 
+  chart!: any;
+
+  @Watch("data")
+  onDataChange(data) {
+    // use api => changeData not source
+    this.chart.changeData(data);
+    console.log(data);
+  }
+
   mounted() {
-    const chart = new G2.Chart({
+    this.chart = new G2.Chart({
       container: this.$refs.chart as any,
       forceFit: true,
       height: window.innerHeight,
       padding: [20, 20, 95, 80]
     });
-    chart.source(this.data, {
+    this.chart.source(this.data, {
       value: {
         min: 0,
         max: 100
       }
     });
-    chart.legend(false);
-    chart.axis(false);
-    chart
+    this.chart.legend(false);
+    this.chart.axis(false);
+    this.chart
       .interval()
       .position("gender*value")
       .color("#3290f6")
@@ -32,7 +42,7 @@ export default class LiquidChart extends Vue {
         opacity: 0.8
       });
     this.data.forEach(function(row) {
-      chart.guide().text({
+      this.chart.guide().text({
         top: true,
         position: {
           gender: row.gender,
@@ -46,6 +56,6 @@ export default class LiquidChart extends Vue {
         }
       });
     });
-    chart.render();
+    this.chart.render();
   }
 }

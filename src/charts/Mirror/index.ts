@@ -1,5 +1,7 @@
-import { Vue, Component, Prop } from "vue-property-decorator";
+import { Vue, Component, Prop, Watch } from "vue-property-decorator";
 import G2 from "@antv/g2";
+import { log } from "util";
+import { watch } from "fs";
 
 @Component
 export default class MirrorChart extends Vue {
@@ -8,7 +10,15 @@ export default class MirrorChart extends Vue {
 
   chart!: any;
 
+  @Watch("data")
+  onDataChange(data) {
+    // use api => changeData not source
+    this.chart.changeData(data);
+    console.log(data);
+  }
+
   mounted() {
+    console.log(this.data);
     this.chart = new G2.Chart({
       container: this.$refs.chart as any,
       forceFit: true,
