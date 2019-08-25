@@ -12,7 +12,7 @@
       <rose-chart :data="data.rose"></rose-chart>
     </chart-frame>
     <chart-frame class="chart chart-4">
-      <line-chart :data="data.line"></line-chart>
+      <line-chart :data="data.line" @func1="getWeekandyear"></line-chart>
     </chart-frame>
     <chart-frame class="chart chart-5">
       <basic-column-chart :data="data.basiccolumn"></basic-column-chart>

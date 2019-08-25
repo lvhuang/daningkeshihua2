@@ -3,8 +3,8 @@
     <div class="charhead">
       <p class="chartext">用户数据：</p>
       <div class="btn">
-      <button @click="checkWeekYear('week')">周</button>
-      <button @click="checkWeekYear('year')">年</button>
+        <button @click="checkWeekYear('week')">周</button>
+        <button @click="checkWeekYear('year')">年</button>
       </div>
     </div>
     <div class="line" ref="chart"></div>
@@ -20,8 +20,10 @@
 .charhead {
   display: flex;
   justify-content: space-between;
+  position: relative;
+  z-index: 3;
 }
-.chartext{
-  font-size: var(--font-size-4)
+.chartext {
+  font-size: var(--font-size-4);
 }
 </style>

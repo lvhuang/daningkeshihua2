@@ -3,9 +3,6 @@ import G2 from "@antv/g2";
 
 @Component
 export default class LineChart extends Vue {
-  @Prop({ default: [] })
-  readonly data!: any[];
-
   @Prop({ default: 1000 })
   readonly width!: number;
 
@@ -14,10 +11,13 @@ export default class LineChart extends Vue {
 
   chart!: any;
 
-  @Emit("func")
+  @Emit("func1")
   checkWeekYear(WeekYear: string) {
     return WeekYear;
   }
+
+  @Prop({ default: [] })
+  readonly data!: any[];
 
   @Watch("data")
   onDataChange(data) {

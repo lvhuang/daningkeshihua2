@@ -30,6 +30,13 @@ export default class Energy extends Vue {
     rose: []
   };
 
+  linePayload: {
+    week: [];
+    year: [];
+  };
+
+  lineWeekOrYear: string;
+
   mounted(): void {
     source$.subscribe(({ board, chart, index, payload }) => {
       const type = { board, chart, index };
@@ -57,11 +64,6 @@ export default class Energy extends Vue {
       }
       /** mirror结束 */
 
-      /** line开始 */
-      if (expectType("line")) {
-        console.log(payload);
-        this.data.line = payload;
-      }
       /** line结束 */
 
       /** basiccolumn开始 */
@@ -75,7 +77,22 @@ export default class Energy extends Vue {
         console.log(payload);
         this.data.rose = payload;
       }
+      /** line开始 */
+      if (expectType("line")) {
+        this.linePayload = payload;
+        this.getWeekandyear(this.lineWeekOrYear);
+        // this.data.line = payload;
+      }
     });
+  }
+
+  getWeekandyear(weekOrYear: string): void {
+    this.lineWeekOrYear = weekOrYear;
+    if (weekOrYear === "week" || weekOrYear === undefined) {
+      this.data.line = this.linePayload.week;
+    } else if (weekOrYear === "year") {
+      this.data.line = this.linePayload.year;
+    }
   }
 
   onHelloClick(): void {
