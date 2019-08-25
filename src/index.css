@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind utilities;
+
+html {
+  width: 9600px;
+  height: 3240px;
+}
+
+body {
+  /* background-color: red; */
+  @apply h-full text-white;
+}
+
+:root {
+  --font-size-1: 50px;
+  --font-size-2: 40px;
+  --font-size-3: 25px;
+  --font-size-4: 14px;
+  color: white;
+}
+
+@media (max-width: 1921px) {
+  :root {
+  --font-size-1: 40px;
+  --font-size-2: 30px;
+  --font-size-3: 20px;
+  --font-size-4: 14px;
+  color: white;
+  }
+}

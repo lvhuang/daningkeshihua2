@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=9600, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>vue-template</title>
+    <style>
+      html, body {
+        height: 100%;
+      }
+      #root {
+        height: 100%;
+      }
+      #tips {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        font-size: 8em;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <span id="tips">加载中...</span>
+    </div>
+
+    <% if (APP_SERVER === 'dev' || APP_SERVER === 'test') { %>
+    <script src="https://marketingapp.saicmotortest.com/public/scripts/jssdk.js"></script>
+    <% } else if (APP_SERVER === 'prod'){ %>
+    <script src="https://marketingapp-pv.roewe.com.cn/public/scripts/jssdk.js"></script>
+    <% } %>
+  </body>
+</html>
