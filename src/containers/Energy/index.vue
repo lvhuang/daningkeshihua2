@@ -9,11 +9,14 @@
     </chart-frame>
     <chart-frame class="chart chart-3">
       <mirror-chart :data="data.mirror"></mirror-chart>
+      <rose-chart :data="data.rose"></rose-chart>
     </chart-frame>
     <chart-frame class="chart chart-4">
       <line-chart :data="data.line"></line-chart>
     </chart-frame>
-    <chart-frame class="chart chart-5"></chart-frame>
+    <chart-frame class="chart chart-5">
+      <basic-column-chart :data="data.basiccolumn"></basic-column-chart>
+    </chart-frame>
     <chart-frame class="chart chart-6"></chart-frame>
     <chart-frame class="chart chart-7"></chart-frame>
     <chart-frame class="chart chart-8"></chart-frame>

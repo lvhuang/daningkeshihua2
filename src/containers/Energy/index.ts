@@ -6,16 +6,18 @@ import BasicColumnChart from "@/charts/BasicColumnChart";
 import LineChart from "@/charts/Line";
 import LiquidChart from "@/charts/Liquid";
 import MirrorChart from "@/charts/Mirror/index";
+import RoseChart from "@/charts/Rosehart/index";
 import { sources, source$, emitData } from "./service";
 
 @Component({
   components: {
     ChartFrame,
     Hello,
-    BasicColumnChart,
     LiquidChart,
     LineChart,
-    MirrorChart
+    BasicColumnChart,
+    MirrorChart,
+    RoseChart
   }
 })
 export default class Energy extends Vue {
@@ -23,7 +25,9 @@ export default class Energy extends Vue {
     hello: 0,
     line: [],
     liquid: [],
-    mirror: []
+    mirror: [],
+    basiccolumn: [],
+    rose: []
   };
 
   mounted(): void {
@@ -59,6 +63,18 @@ export default class Energy extends Vue {
         this.data.line = payload;
       }
       /** line结束 */
+
+      /** basiccolumn开始 */
+      if (expectType("basiccolumn")) {
+        console.log(payload);
+        this.data.basiccolumn = payload;
+      }
+      /** basiccolumn结束 */
+
+      if (expectType("rose")) {
+        console.log(payload);
+        this.data.rose = payload;
+      }
     });
   }
 

@@ -1,4 +1,4 @@
-import { Vue, Component, Prop } from "vue-property-decorator";
+import { Vue, Component, Prop, Watch } from "vue-property-decorator";
 import G2 from "@antv/g2";
 
 @Component
@@ -7,6 +7,12 @@ export default class RoseChart extends Vue {
   readonly data!: any[];
 
   chart!: any;
+
+  @Watch("data")
+  onDataChange(data) {
+    // use api => changeData not source
+    this.chart.changeData(data);
+  }
 
   mounted() {
     this.chart = new G2.Chart({

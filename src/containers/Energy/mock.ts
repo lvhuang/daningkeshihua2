@@ -242,3 +242,57 @@ export function createMirrorData() {
     }
   ];
 }
+
+export function createBasicData() {
+  return [
+    {
+      time: "周日",
+      sales: 99
+    },
+    {
+      time: "周一",
+      sales: 56
+    },
+    {
+      time: "周二",
+      sales: 23
+    },
+    {
+      time: "周三",
+      sales: 88
+    },
+    {
+      time: "周四",
+      sales: 105
+    },
+    {
+      time: "周五",
+      sales: 72
+    },
+    {
+      time: "周六",
+      sales: 38
+    }
+  ];
+}
+
+export function createRoseData() {
+  return [
+    {
+      year: "2001",
+      population: 41.8
+    },
+    {
+      year: "2002",
+      population: 38
+    },
+    {
+      year: "2003",
+      population: 33.7
+    },
+    {
+      year: "2004",
+      population: 30.7
+    }
+  ];
+}
