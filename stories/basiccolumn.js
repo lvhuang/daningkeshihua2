@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import { storiesOf } from '@storybook/vue'
-import BasicColumnChart from '../src/charts/BasicColumnChart/index'
+import BasicColumnChart from '../src/charts/BasicColumn/index'
 
 const data1 = [{
     time: '周日',

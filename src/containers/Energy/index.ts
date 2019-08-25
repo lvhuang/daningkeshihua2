@@ -2,7 +2,7 @@ import { Vue, Component } from "vue-property-decorator";
 import { equals } from "ramda";
 import ChartFrame from "@/components/Frame/index";
 import Hello from "@/charts/Hello";
-import BasicColumnChart from "@/charts/BasicColumnChart";
+import BasicColumnChart from "@/charts/BasicColumn";
 import LineChart from "@/charts/Line";
 import LiquidChart from "@/charts/Liquid";
 import MirrorChart from "@/charts/Mirror/index";

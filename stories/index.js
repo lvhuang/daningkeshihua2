@@ -7,4 +7,5 @@ import './basiccolumn'
 import './liquid'
 import './rose'
 import './mirror'
+import './group'
 
