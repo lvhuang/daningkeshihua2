@@ -39,13 +39,6 @@ export default class Energy extends Vue {
       }
       /** 调用数据源结束 */
 
-      // /** line开始 */
-      // if (expectType("line")) {
-      //   console.log(payload);
-      //   this.data.line = payload;
-      // }
-      // /** line结束 */
-
       /** liqiud开始 */
       if (expectType("liquid")) {
         // console.log(payload);
@@ -59,6 +52,13 @@ export default class Energy extends Vue {
         this.data.mirror = payload;
       }
       /** mirror结束 */
+
+      /** line开始 */
+      if (expectType("line")) {
+        console.log(payload);
+        this.data.line = payload;
+      }
+      /** line结束 */
     });
   }
 

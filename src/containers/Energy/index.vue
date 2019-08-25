@@ -10,7 +10,9 @@
     <chart-frame class="chart chart-3">
       <mirror-chart :data="data.mirror"></mirror-chart>
     </chart-frame>
-    <chart-frame class="chart chart-4"></chart-frame>
+    <chart-frame class="chart chart-4">
+      <line-chart :data="data.line"></line-chart>
+    </chart-frame>
     <chart-frame class="chart chart-5"></chart-frame>
     <chart-frame class="chart chart-6"></chart-frame>
     <chart-frame class="chart chart-7"></chart-frame>

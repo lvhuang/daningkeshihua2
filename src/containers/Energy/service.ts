@@ -1,5 +1,5 @@
 import { Observable, merge, Subject } from "rxjs";
-import { createLineYearData, createliquidData, createMirrorData } from "./mock";
+import { createLineData, createliquidData, createMirrorData } from "./mock";
 
 interface HelloReq {
   board: string;
@@ -20,15 +20,6 @@ export const sources = {
     })()
   },
 
-  line: {
-    type: {
-      board: "energy",
-      chart: "line",
-      index: "0"
-    },
-    mock: createLineYearData()
-  },
-
   liquid: {
     type: {
       board: "energy",
@@ -44,6 +35,14 @@ export const sources = {
       index: "0"
     },
     mock: createMirrorData()
+  },
+  line: {
+    type: {
+      board: "energy",
+      chart: "line",
+      index: "0"
+    },
+    mock: createLineData()
   }
 };
 
